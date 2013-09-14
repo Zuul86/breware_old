@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Temperature Client</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <link href="{{ static_url("jquery.jqplot.min.css")}}" rel="stylesheet" />
+        <link href="{{ static_url("css/modern.css")}}" rel="stylesheet" />
+        <link href="{{ static_url("css/modern-responsive.css")}}" rel="stylesheet" />
+        <link href="{{ static_url("breware.css")}}" rel="stylesheet" />
+	</head>
+	<body class="metrouicss">
+        <h1 class="screen-title">Mash Temperature Control System</h1>
+            <div class="message-dialog">
+            
+            </div>
+        <div>
+            <div>
+                <div style="float: left;" class="nav-temperature-container">
+                    <span class="icon-arrow-left-3"></span>
+                    <h2 class="fg-color-green current-temperature"><strong><span id="currentTemperature">--</span>&deg;F</strong></h2>
+                </div>
+                <div id="mashrest" class="mash-rest-chart"></div>
+            </div>
+            <div class="form-container">
+                <div class="step-temp input-control text">
+                    <input id="stepTemperature" type="text" placeholder="Temperature" />
+                    <button class="btn-clear"></button>
+                </div>
+                <div class="step-duration input-control text">
+                    <input id="stepDuration" type="text"  placeholder="Duration"/>
+                    <button class="btn-clear"></button>
+                </div>
+                <button id="add_step" class="image-button bg-color-blue fg-color-white">
+                    Add Step
+                    <i class="icon-plus-2 bg-color-green"></i>
+                </button>
+            </div>
+        </div>
+        <div class="control-button-container">
+            <label class="input-control switch">
+                <input id="flame" type="checkbox">
+                <span class="helper">Flame</span>
+            </label>
+            <button id="close_socket" class="image-button bg-color-blue fg-color-white app-bar-buttons">
+                Stop
+                <i class="icon-cancel bg-color-red"></i>
+            </button>
+            <button id="start_temperature_reading" class="image-button bg-color-blue fg-color-white app-bar-buttons">
+                Start
+                <i class="icon-fire bg-color-green"></i>
+            </button>
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="{{ static_url("excanvas.min.js")}}"></script>
+        <script type="text/javascript" src="{{ static_url("jquery.jqplot.min.js")}}"></script>
+	    <script type="text/javascript" src="{{ static_url("plugins/jqplot.dateAxisRenderer.min.js")}}"></script>
+        <script src="{{ static_url("temperature_client.js")}}" type="text/javascript"></script>
+	</body>
+</html>
